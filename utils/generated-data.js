@@ -47,17 +47,38 @@ function getRandomGender() {
     return array[gender];
 }
 
+function getDepositRandom() {
+    const array = [false, true];
+    const deposit = Math.floor(Math.random() * array.length);
+    return array[deposit];
+}
+
 export const customerInfo = () => {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
     const addressFirstLine = faker.location.streetAddress();
     const addressSecondLine = faker.location.secondaryAddress()
+    const totalPrice = faker.number.int({min: 1, max: 100});
+    const bookName = faker.book.title();
+
+    const updateFirstName = faker.person.firstName();
+    const updateLastName = faker.person.lastName();
+    const updateTotalPrice = faker.number.int({min: 1, max: 50});
+    const updateBookName = faker.book.title();
 
     return {
+        updateFirstName,
+        updateLastName,
+        updateTotalPrice,
+        updateBookName,
+        updateDepositPaid: getDepositRandom(),
         firstName,
         lastName,
+        totalPrice,
+        bookName,
         emailAddress: generateRandomEmail(`${firstName}${lastName}`),
         phoneNumber: generatePhoneNumber(),
+        depositPaid: getDepositRandom(),
         addressFirstLine,
         addressSecondLine,
         state: getRandomUSStateAbbreviation(),

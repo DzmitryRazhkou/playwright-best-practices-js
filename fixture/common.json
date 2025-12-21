@@ -4,5 +4,13 @@
       "value": "Option 2"
     },
     "fruitsValue": "0"
+  },
+  "loginAuthBody": {
+    "username": "admin",
+    "password": "password123"
+  },
+  "createBookDate": {
+    "start": "2022-05-29",
+    "end": "2022-05-31"
   }
 }
